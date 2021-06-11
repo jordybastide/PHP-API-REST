@@ -62,6 +62,7 @@ class Posts{
           $row = $query->fetch(PDO::FETCH_ASSOC);
      
           // On hydrate l'objet
+          $this->id = $row['id'];
           $this->post_date = $row['post_date'];
           $this->content = $row['content'];
           $this->user_id = $row['user_id'];

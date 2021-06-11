@@ -42,15 +42,15 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
           while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                extract($row);
 
-               $prod = [
+               $postData = [
                     "id" => $id,
-                    "post_date" => $post_id,
+                    "post_date" => $post_date,
                     "content" => $content,
                     "user_id" => $user_id,
                     "topic_id" => $topic_id
                ];
 
-               $arrayPosts['posts'][] = $prod;
+               $arrayPosts['posts'][] = $postData;
           }
           // On envoie le code réponse 200 OK
           http_response_code(200);
